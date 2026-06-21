@@ -24,4 +24,4 @@ jobs:
 
       - name: Import check
         run: |
-          python -c "import rag_engine; print('Import OK')"
+          cd FinalMLProject && python -c "import rag_engine; print('Import OK')"
