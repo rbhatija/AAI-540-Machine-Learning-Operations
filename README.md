@@ -45,6 +45,26 @@ The system follows a RAG architecture with two independent retrieval pipelines.
 
 ---
 
+## How to Run the Project
+
+### 1. Install dependencies
+Make sure you have Python 3.10 installed, then run:
+
+pip install -q torch torchvision torchaudio transformers accelerate sentence-transformers faiss-cpu tf-keras
+
+### 2. Start the FastAPI server
+uvicorn ragApi:app --host 0.0.0.0 --port 8000
+The service will be available at:
+http://127.0.0.1:8000
+
+### 3. Test the API
+curl -X POST "http://127.0.0.1:8000/ask" \
+-H "Content-Type: application/json" \
+-d '{"question":"What krishna instructs shall we ultimately surrender unto?"}'
+
+
+---
+
 ## Features
 
 - Dual knowledge base retrieval (Bhagavad Gita + Srimad Bhagavatam)
